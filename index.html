@@ -3,108 +3,486 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Sara ❤️</title>
+<title>Cartas 2026 🤍</title>
+
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;font-family:Georgia,'Times New Roman',serif}
-body{
-  color:#fff;
-  background:
-    radial-gradient(circle at 20% 15%,rgba(93,64,180,.35),transparent 28%),
-    radial-gradient(circle at 80% 80%,rgba(220,50,120,.25),transparent 30%),
-    linear-gradient(135deg,#050518,#10103b 48%,#050511);
-  overflow-x:hidden;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-.stars,.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden}
-.star{position:absolute;width:2px;height:2px;background:white;border-radius:50%;animation:twinkle 2.5s infinite alternate}
-@keyframes twinkle{from{opacity:.15;transform:scale(.7)}to{opacity:1;transform:scale(1.5)}}
-.heart{position:absolute;bottom:-40px;color:#ff6fa8;font-size:18px;animation:float 9s linear infinite;opacity:.7}
-@keyframes float{
-  0%{transform:translateY(0) rotate(0);opacity:0}
-  10%{opacity:.7} 100%{transform:translateY(-110vh) rotate(360deg);opacity:0}
+
+body {
+    background: #05070b;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
-.wrap{max-width:760px;margin:auto;padding:34px 18px 60px;position:relative}
-.card{
-  margin-top:18px;padding:30px 22px;border-radius:28px;
-  background:rgba(8,8,30,.72);
-  border:1px solid rgba(255,150,205,.3);
-  box-shadow:0 0 45px rgba(180,80,180,.2),inset 0 0 30px rgba(255,255,255,.025);
-  backdrop-filter:blur(8px);
+
+/* FONDO */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(0,100,255,.12), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(0,100,255,.08), transparent 30%);
+    pointer-events: none;
 }
-h1{text-align:center;font-size:31px;margin:0 0 7px}
-.subtitle{text-align:center;color:#ffc7df;font-size:15px;margin-bottom:28px}
-button{
-  display:block;margin:0 auto;padding:14px 24px;border:0;border-radius:999px;
-  color:white;background:linear-gradient(135deg,#d94d91,#7355d9);
-  font-size:16px;font-weight:bold;box-shadow:0 8px 25px rgba(210,70,150,.3);
-  cursor:pointer
+
+/* CORAZONES */
+.heart {
+    position: fixed;
+    color: white;
+    opacity: .45;
+    font-size: 18px;
+    pointer-events: none;
+    z-index: 0;
 }
-#letter{display:none;margin-top:28px}
-p{font-size:17px;line-height:1.75;margin:0 0 22px}
-.end{text-align:center;color:#ffb9d8;font-size:20px;margin-top:25px}
-.note{text-align:center;font-size:12px;color:#aaa;margin-top:20px}
-@media(max-width:500px){.wrap{padding:22px 12px 45px}.card{padding:25px 18px}h1{font-size:27px}p{font-size:16px;line-height:1.7}}
+
+.h1 { top: 8%; left: 8%; }
+.h2 { top: 18%; right: 10%; }
+.h3 { top: 42%; left: 5%; }
+.h4 { top: 60%; right: 7%; }
+.h5 { top: 78%; left: 10%; }
+.h6 { top: 90%; right: 12%; }
+
+/* CONTENEDOR */
+.container {
+    width: 92%;
+    max-width: 700px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* PORTADA */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 36px;
+    letter-spacing: 2px;
+}
+
+.hero h1 span {
+    color: #fff;
+}
+
+.hero p {
+    margin-top: 15px;
+    color: #cfd6e4;
+    font-size: 15px;
+}
+
+.line {
+    width: 100px;
+    height: 2px;
+    background: #1976ff;
+    margin: 25px auto;
+}
+
+.btn {
+    border: 1px solid #1976ff;
+    background: #08111f;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #1976ff;
+}
+
+/* SECCIONES */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #aeb7c6;
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+/* CARTAS */
+.card {
+    background: rgba(10,15,24,.92);
+    border: 1px solid #173967;
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 22px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,80,255,.08);
+}
+
+.date {
+    color: #6ea8ff;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.card .heart {
+    position: static;
+    opacity: 1;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+/* CARTA ABIERTA */
+.letter {
+    display: none;
+    background: #0b1018;
+    border: 1px solid #1b4b88;
+    border-radius: 18px;
+    padding: 28px;
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #e9edf5;
+    text-align: left;
+}
+
+.letter h4 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* FOTOS */
+.photos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.photo {
+    height: 220px;
+    border: 1px solid #244d7d;
+    border-radius: 16px;
+    background: linear-gradient(145deg,#0b111b,#111a28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #718096;
+    text-align: center;
+    padding: 15px;
+}
+
+/* FINAL */
+.final {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.final h2 {
+    font-size: 29px;
+}
+
+.final p {
+    color: #b9c2d0;
+    line-height: 1.7;
+    margin: 20px 0 30px;
+}
+
+.footer {
+    padding: 30px;
+    text-align: center;
+    color: #6ea8ff;
+    font-size: 13px;
+}
+
+@media(max-width:500px) {
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .photos {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
 </head>
+
 <body>
-<div class="stars" id="stars"></div>
-<div class="hearts" id="hearts"></div>
 
-<main class="wrap">
-  <section class="card">
-    <h1>Para Sara ❤️</h1>
-    <div class="subtitle">Hay algo que quería decirte con calma...</div>
-    <button id="open">💌 Abrir mi carta</button>
+<!-- CORAZONES BLANCOS -->
+<div class="heart h1">🤍</div>
+<div class="heart h2">🤍</div>
+<div class="heart h3">🤍</div>
+<div class="heart h4">🤍</div>
+<div class="heart h5">🤍</div>
+<div class="heart h6">🤍</div>
 
-    <div id="letter">
-      <p>Sara amor quiero decirte todo esto con calma porque no quiero que pienses que te estoy escribiendo solamente para que se te pase el enojo</p>
+<!-- PORTADA -->
+<div class="hero container">
 
-      <p>Primero que todo quiero pedirte perdón por lo que pasó hoy sé que estuvo mal hacerte el chupón y enserio no fue mi intención hacerte eso y entiendo por qué te molestaste y por qué tu mamá también se enojó tú me diste tu confianza y yo en ese momento no pensé en las consecuencias y sé que eso estuvo mal</p>
+    <h1>🤍 CARTAS 2026 🤍</h1>
 
-      <p>Yo no lo hice con intención de hacerte sentir mal ni de faltarte el respeto pero sé que eso no cambia lo que pasó y de verdad me arrepiento</p>
+    <div class="line"></div>
 
-      <p>También me duele mucho haberte hecho pasar por esto porque hoy era nuestro último día juntos antes de que te fueras para donde tu familia y habíamos pasado casi todo el día bien yo quería que tuviéramos un día bonito para recordarlo mientras no nos vemos durante esta semana o quizás estas dos semanas y me duele mucho que haya terminado así</p>
+    <p>
+        Momentos que quedaron guardados en palabras.
+    </p>
 
-      <p>Yo sé que no soy el mejor novio y sé que muchas veces actúo sin pensar hago las cosas sin pensar en las consecuencias y después termino arrepintiéndome también sé que sobrepienso mucho las cosas y a veces tomo demasiado en serio cosas que me dices y termino dañando momentos que estaban bien y sé que eso también tengo que cambiarlo</p>
+    <button class="btn" onclick="irCartas()">
+        ♡ COMENZAR ♡
+    </button>
 
-      <p>La verdad ahora mismo me siento horrible conmigo mismo siento que soy una mierda de persona y una mierda de novio y que soy un estúpido porque muchas veces hago cosas sin pensar y termino haciéndote sentir mal a ti también y me da mucha rabia conmigo mismo saber que muchas veces por mis estupideces terminamos en situaciones así</p>
+</div>
 
-      <p>También pienso en las otras veces que hemos tenido problemas este año como cuando nos han regañado en el colegio por besarnos o aquella vez que el profesor entendió mal lo que estaba pasando en el salón y terminó hablándolo con tu mamá aunque algunas cosas se pudieron explicar y ella entendió igual siento que muchas veces termino metiéndote en problemas y eso me pesa mucho</p>
+<!-- CARTAS -->
+<section id="cartas">
+<div class="container">
 
-      <p>No quiero seguir siendo así amor no quiero que cada vez que haga algo mal simplemente diga perdón y después vuelva a cometer el mismo error quiero aprender a pensar antes de hacer las cosas quiero respetar más los límites y pensar más en las consecuencias de lo que hago especialmente cuando eso te puede afectar a ti</p>
+    <h2 class="section-title">💌 Nuestras cartas</h2>
 
-      <p>No te estoy diciendo todo esto para que me perdones ahora mismo ni para que tengas que hablar conmigo si no quieres si necesitas estar sola o tranquila lo voy a respetar solo quería que supieras cómo me siento y que de verdad estoy arrepentido</p>
+    <p class="section-subtitle">
+        Cada una guarda un momento especial.
+    </p>
 
-      <p>Te quiero muchísimo y me importa demasiado nuestra relación y sé que un perdón no arregla todo por eso quiero demostrártelo con mis acciones y no solamente con palabras</p>
+    <!-- CARTA 1 -->
+    <div class="card">
+        <div class="heart">🤍</div>
+        <div class="date">18/03/2026</div>
+        <h3>Nuestro primer mes</h3>
 
-      <div class="end">Perdón por todo amor 🤍</div>
+        <button class="btn" onclick="abrir('c1')">
+            ABRIR CARTA
+        </button>
+
+        <div class="letter" id="c1">
+            <h4>🤍 Nuestro primer mes 🤍</h4>
+
+            <p>
+                Una carta para recordar nuestro primer mes juntos,
+                todo lo que habíamos vivido y lo especial que era
+                seguir construyendo nuestra historia.
+            </p>
+        </div>
     </div>
-  </section>
-  <div class="note">Hecho con cariño ❤️</div>
-</main>
+
+    <!-- CARTA 2 -->
+    <div class="card">
+        <div class="heart">🤍</div>
+        <div class="date">08/04/2026</div>
+        <h3>Primera carta que recibo</h3>
+
+        <button class="btn" onclick="abrir('c2')">
+            ABRIR CARTA
+        </button>
+
+        <div class="letter" id="c2">
+            <h4>🤍 Primera carta que recibo 🤍</h4>
+
+            <p>
+                Amor 🤍<br><br>
+
+                Hoy quiero hablarte de esta carta, pero no solo
+                de la carta, sino de lo que significó para mí
+                en ese momento.
+                <br><br>
+
+                Recuerdo que apenas habían pasado dos días desde
+                que me la diste y yo todavía seguía pensando en ella.
+                Puede que para ti haya sido un detalle sencillo,
+                pero para mí fue algo completamente nuevo,
+                porque nunca nadie me había dado una carta antes.
+                <br><br>
+
+                Me acuerdo de lo feliz que me hizo recibirla y de
+                lo mucho que significó para mí que tú tuvieras
+                ese detalle conmigo.
+            </p>
+        </div>
+    </div>
+
+    <!-- CARTA 3 -->
+    <div class="card">
+        <div class="heart">🤍</div>
+        <div class="date">12/05/2026</div>
+        <h3>Mi cumpleaños</h3>
+
+        <button class="btn" onclick="abrir('c3')">
+            ABRIR CARTA
+        </button>
+
+        <div class="letter" id="c3">
+            <h4>🤍 Mi cumpleaños 🤍</h4>
+
+            <p>
+                Mi amor 🤍<br><br>
+
+                Quiero darte las gracias por la carta que me diste
+                hoy. La verdad me hizo sentir muy feliz y muy querido.
+                <br><br>
+
+                Me gustó mucho que te tomaras el tiempo para hacerme
+                algo así, de verdad significa mucho para mí y más
+                viniendo de ti.
+                <br><br>
+
+                No sé cómo explicar bien lo que sentí, pero me hizo
+                sentir muy especial y me alegró mucho mi día.
+                <br><br>
+
+                Gracias por ese detalle tan bonito, mi vida.
+                Te amo muchísimo 🤍 y gracias por hacer mi cumpleaños
+                aún más especial.
+            </p>
+        </div>
+    </div>
+
+    <!-- CARTA 4 -->
+    <div class="card">
+        <div class="heart">🤍</div>
+        <div class="date">12/06/2026</div>
+        <h3>Feliz cumpleaños, mi vida</h3>
+
+        <button class="btn" onclick="abrir('c4')">
+            ABRIR CARTA
+        </button>
+
+        <div class="letter" id="c4">
+            <h4>🤍 Feliz cumpleaños, mi vida 🤍</h4>
+
+            <p>
+                Una carta escrita especialmente para ti,
+                para celebrar tu cumpleaños y recordarte
+                lo importante que eres para mí.
+            </p>
+        </div>
+    </div>
+
+    <!-- CARTA 5 -->
+    <div class="card">
+        <div class="heart">🤍</div>
+        <div class="date">14/07/2026</div>
+        <h3>A pesar de mis pensamientos, te amo</h3>
+
+        <button class="btn" onclick="abrir('c5')">
+            ABRIR CARTA
+        </button>
+
+        <div class="letter" id="c5">
+            <h4>🤍 A pesar de mis pensamientos, te amo 🤍</h4>
+
+            <p>
+                Una carta sobre mis pensamientos y sentimientos,
+                recordando que, a pesar de todo lo que pueda pasar
+                por mi mente, el cariño y el amor siguen estando ahí.
+            </p>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<!-- FOTOS -->
+<section>
+<div class="container">
+
+    <h2 class="section-title">📸 Nuestros recuerdos 🤍</h2>
+
+    <p class="section-subtitle">
+        Porque algunas cosas no necesitan palabras.
+    </p>
+
+    <div class="photos">
+
+        <div class="photo">
+            📷<br><br>
+            Aquí irá una foto
+        </div>
+
+        <div class="photo">
+            📷<br><br>
+            Aquí irá una foto
+        </div>
+
+        <div class="photo">
+            📷<br><br>
+            Aquí irá una foto
+        </div>
+
+        <div class="photo">
+            📷<br><br>
+            Aquí irá una foto
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+<div class="container">
+
+    <h2>Y esto apenas es el comienzo... 🤍</h2>
+
+    <p>
+        Hay momentos que pasan, pero cuando quedan escritos,
+        nunca se olvidan.
+    </p>
+
+    <button class="btn" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        ♡ VOLVER AL INICIO ♡
+    </button>
+
+</div>
+</section>
+
+<div class="footer">
+    🤍 2026 🤍
+</div>
 
 <script>
-const stars=document.getElementById('stars');
-for(let i=0;i<100;i++){
-  const s=document.createElement('span');s.className='star';
-  s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
-  s.style.animationDelay=(Math.random()*3)+'s';stars.appendChild(s);
+
+function irCartas() {
+    document.getElementById("cartas")
+    .scrollIntoView({behavior:"smooth"});
 }
-const hearts=document.getElementById('hearts');
-const symbols=['❤','♡','💗','💖','✨'];
-for(let i=0;i<22;i++){
-  const h=document.createElement('span');h.className='heart';
-  h.textContent=symbols[Math.floor(Math.random()*symbols.length)];
-  h.style.left=Math.random()*100+'%';
-  h.style.animationDelay=(Math.random()*8)+'s';
-  h.style.animationDuration=(7+Math.random()*6)+'s';
-  hearts.appendChild(h);
+
+function abrir(id) {
+
+    const carta = document.getElementById(id);
+
+    if (carta.style.display === "block") {
+        carta.style.display = "none";
+    } else {
+        carta.style.display = "block";
+        carta.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+    }
 }
-document.getElementById('open').onclick=()=>{
-  document.getElementById('letter').style.display='block';
-  document.getElementById('open').style.display='none';
-  window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});
-};
+
 </script>
+
 </body>
 </html>
